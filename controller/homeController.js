@@ -6,7 +6,13 @@ class homeController {
     console.log(subject);
     res.render("index", {
       subjects: subject,
+      title: "Home EJS TTV",
     });
+  }
+  async showCourse(req, res, next) {
+    const courseId = await Subject.findById(req.params.id);
+    console.log(courseId);
+    res.render();
   }
 }
 
