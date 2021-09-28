@@ -1,9 +1,12 @@
 const data = require("../dev-data/data");
+const Subject = require("../models/Subject");
 class homeController {
-  showHome(req, res, next) {
-    console.log(data);
+  async showHome(req, res, next) {
+    const subject = await Subject.find({});
+
+    console.log(subject);
     res.render("index", {
-      subjects: data,
+      subjects: subject,
     });
   }
 }
