@@ -1,18 +1,28 @@
-const data = require("../dev-data/data");
 const Subject = require("../models/Subject");
+const {
+  mongooseToObject,
+  multipleMongoseToObject,
+} = require("../utils/mongoose");
 class homeController {
   async showHome(req, res, next) {
     const subject = await Subject.find({});
     console.log(subject);
     res.render("index", {
       subjects: subject,
-      title: "Home EJS TTV",
+      title: "List Course",
     });
   }
   async showCourse(req, res, next) {
-    const courseId = await Subject.findById(req.params.id);
-    console.log(courseId);
-    res.render();
+    let course;
+    course = await Subject.findById(req.params.id, (err, subject) => {
+      if (err) return;
+      try {
+        res.render("./course/course", {
+          title: "View Course",
+          subject,
+        });
+      } catch (error) {}
+    });
   }
 }
 

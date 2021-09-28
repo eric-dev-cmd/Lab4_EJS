@@ -1,0 +1,35 @@
+ <div class="container">
+        <div class="col-12">
+          <h1 class="text-center fw-bold py-2">View Course</h1>
+        </div>
+        <div class="col-12 py-3">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên môn học</th>
+                <th scope="col">Loại môn học</th>
+                <th scope="col">Khoa</th>
+                <th scope="col-3" class="text-center">Controls</th>
+
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td><%= subject.id %></td>
+                <td><%= subject.name %></td>
+                 <td><%= subject.subjectType %></td>
+                <td><%= subject.department %></td>
+                <td class="d-flex align-items-center justify-content-evenly">
+                    <a href="remove"><i class="fal fa-trash-alt text-danger"></i></a>
+                    <a href="update"><i class="fal fa-user-edit"></i></a>
+
+                </td>
+              </tr>
+
+            
+            </tbody>
+          </table>
+        </div>
+      </div>
