@@ -39,5 +39,5 @@ if (process.argv[2] === "--import") {
  */
 // run script [ node .\import-data.js --import/--delete]
 console.log(process.argv);
-//node .\import-data.js --delete
-//node .\import-data.js --import
+//       node .\import-data.js --delete
+//       node .\import-data.js --import

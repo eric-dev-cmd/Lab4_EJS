@@ -38,6 +38,7 @@ class homeController {
       res.redirect("/admin/courses");
     });
   }
+  async deleteCourse(req, res, next) {}
 }
 
 module.exports = new homeController();

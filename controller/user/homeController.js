@@ -5,10 +5,13 @@ const {
 } = require("../../utils/mongoose");
 class homeController {
   async showHome(req, res, next) {
-    res.send("User Home page");
-  }
-  async showCourse(req, res, next) {
-    res.send("User course");
+    await Subject.find((err, subjects) => {
+      if (err) handleError(err);
+      res.render("./user/HomePage", {
+        title: "Home Page ",
+        subjects,
+      });
+    });
   }
 }
 
