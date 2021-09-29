@@ -1,37 +1,51 @@
- <div class="container">
-        <div class="col-12">
-          <h1 class="text-center fw-bold py-2">List Courses</h1>
-        </div>
-        <div class="col-12 py-3">
-          <table class="table table-bordered table-hover">
-            <thead>
-              <tr>
-                <th scope="col">STT</th>
-                <th scope="col">Tên môn học</th>
-                <th scope="col">Loại môn học</th>
-                <th scope="col">Khoa</th>
-                <th scope="col-3" class="text-center">Controls</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <% subjects.forEach(function(subject) { %>
-              <tr>
-                <td><%= subject.id %></td>
-                <td><%= subject.name %></td>
-                 <td><%= subject.subjectType %></td>
-                <td><%= subject.department %></td>
-                <td class="d-flex align-items-center justify-content-between">
-                    <a href="course/<%= subject.slug%>"><i class="far fa-eye text-danger"></i></a>
-                    <a href="add"><i class="fal fa-user-plus"></i></a>
-                    <a href="remove"><i class="fal fa-trash-alt text-danger"></i></a>
-                    <a href="update"><i class="fal fa-user-edit"></i></a>
-
-                </td>
-              </tr>
-              <% }); %>
-            
-            </tbody>
-          </table>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center fw-bold py-2">List Courses</h1>
+    </div>
+    <div class="col-10 col-sm-12">
+      <div class="d-flex">
+        <a href="/admin/course/create">
+        <button class="btn btn-sm btn-danger me-3" class="addCourse">
+          Thêm khoá học
+        </button></a>
+        <input type="text" class="" placeholder="Tìm khoá học" />
       </div>
+    </div>
+    <div class="col-2"></div>
+      
+      <div class="col-12 col-sm-12  py-3">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th scope="col">STT</th>
+              <th scope="col">Tên môn học</th>
+              <th scope="col">Loại môn học</th>
+              <th scope="col">Khoa</th>
+              <th scope="col-3" class="text-center">Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% subjects.forEach(function(subject, index) { %>
+            <tr>
+              <td><%= index + 1%></td>
+              <td><%= subject.name %></td>
+              <td><%= subject.subjectType %></td>
+              <td><%= subject.department %></td>
+              <td class="d-flex align-items-center justify-content-between">
+                <a href="course/<%= subject.slug%>"
+                  ><i class="far fa-eye text-danger"></i
+                ></a>
+                <a href="remove"
+                  ><i class="fal fa-trash-alt text-danger"></i
+                ></a>
+                <a href="update"><i class="fal fa-user-edit"></i></a>
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+
+  </div>
+</div>

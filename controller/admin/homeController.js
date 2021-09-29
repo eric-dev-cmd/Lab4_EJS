@@ -24,6 +24,20 @@ class homeController {
       }
     );
   }
+  async createCourse(req, res, next) {
+    res.render("./admin/createCourse", {
+      title: "Create Course",
+    });
+  }
+  async storeCourse(req, res, next) {
+    let course = req.body;
+    let data = new Subject(course);
+    data.save((err, subject) => {
+      if (err) return handleError(err);
+      console.log(subject);
+      res.redirect("/admin/courses");
+    });
+  }
 }
 
 module.exports = new homeController();
