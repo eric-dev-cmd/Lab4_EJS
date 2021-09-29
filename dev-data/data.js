@@ -1,25 +1,25 @@
 const data = [
   {
     id: 1,
-    name: "WWW",
+    name: "Lập trình WWW Java",
     subjectType: "SE",
     department: "KTPM",
   },
   {
     id: 2,
-    name: "NodeJS",
+    name: "Công nghệ mới Nodejs",
     subjectType: "BE",
     department: "KHMT",
   },
   {
     id: 3,
-    name: "ReactJS",
+    name: "Frontend Reacjts",
     subjectType: "FE",
     department: "HTTT",
   },
   {
     id: 4,
-    name: "PHP",
+    name: "Lập trình PHP",
     subjectType: "BE",
     department: "KHMT",
   },

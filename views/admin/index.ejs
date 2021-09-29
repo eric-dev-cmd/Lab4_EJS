@@ -21,8 +21,8 @@
                 <td><%= subject.name %></td>
                  <td><%= subject.subjectType %></td>
                 <td><%= subject.department %></td>
-                <td class="d-flex">
-                    <a href="course/<%= subject.id%>"><i class="far fa-eye text-danger"></i></a>
+                <td class="d-flex align-items-center justify-content-between">
+                    <a href="course/<%= subject.slug%>"><i class="far fa-eye text-danger"></i></a>
                     <a href="add"><i class="fal fa-user-plus"></i></a>
                     <a href="remove"><i class="fal fa-trash-alt text-danger"></i></a>
                     <a href="update"><i class="fal fa-user-edit"></i></a>
